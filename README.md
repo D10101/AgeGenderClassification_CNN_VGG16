@@ -20,13 +20,3 @@ This repository contains the code for our finalist project in the Smart Digital 
 
 - Real-time age and gender detection using webcam input.
 - Built with a VGG16-based CNN model for high accuracy.
-
-## Usage
-
-1. Go to VGG16 folder and Launch the web application:
-   ```bash
-   python app.py
-   ```
-2. Access the application through your web browser and start the webcam to see age and gender predictions.
-
-
