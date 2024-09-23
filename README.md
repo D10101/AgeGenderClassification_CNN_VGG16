@@ -1,6 +1,14 @@
 # SDH Age, Gender & Ethnicity Detection with different CNN Architectures
 
-This repository contains the code for the Smart Digital Hackathon (2022) finalist project. The project features a web application that uses webcam technology and a Convolutional Neural Network (CNN) with VGG16 architecture for accurate age, gender and ethnicity detection.
+This repository contains the code for our finalist project in the Smart Digital Hackathon (2022). The project is a web application that uses CNNs, specifically VGG16, for real-time age, gender, and ethnicity detection via webcam input.
+
+## Project Highlights
+
+- **Technology**: CNN-based web app with VGG16 architecture for real-time predictions
+                  Features
+- **Webcam**: Based real-time age, gender, and ethnicity detection
+
+- **High accuracy using VGG16 CNN model**
 
 ## Project Overview
 
@@ -21,8 +29,4 @@ This repository contains the code for the Smart Digital Hackathon (2022) finalis
    ```
 2. Access the application through your web browser and start the webcam to see age and gender predictions.
 
-## Certificate
 
-You can view the competition certificate [here](https://drive.google.com/file/d/1DpzIiOMHGzNpPZ-jxuBo1btC4XNgGIom/view).
-
-For more details, refer to the code and documentation within the repository.
