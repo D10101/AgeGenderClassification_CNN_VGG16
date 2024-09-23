@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ url_for('static', filename='css/styleResult.css') }}" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="icon" type="image/ico" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <title>Lannisters - Results</title>
+</head>
+
+<body style='background: url({{ url_for('static', filename='images/arkWebsite3.png') }}); background-size: cover; background-attachment: fixed; background-repeat: no-repeat;'>
+    <nav>
+        <div class="logo">
+            <img src="../static/images/logo7a.png" alt="Logo">
+        </div>
+        <ul class="menu">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <section class="uploader" id="uploading">
+        <form action="/result" id="upload-file" method="post" enctype="multipart/form-data" style="
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            min-height: 10vh;
+            border-radius: 20px;
+            min-width: 18vw;
+            padding: 15px;
+            background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
+            margin: 10px;
+            padding: 15px 5px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+        ">
+            <input type="file" name="file" id="ip1" class="form-control" autocomplete="off" required>
+            <input type="submit" id="sub" value="Submit" style="
+            margin-top: 2vh;
+            width: 10vw;
+            height: 3.5vh;
+            background-color: rgba(57, 215, 154, 0.8);
+            color: white;
+            border: none;
+            font-weight: bold;
+            border-radius: 15px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            outline: none;
+            ">
+        </form>
+    </section>
+    <section class="results" id="resultSec">
+        <div class="image-section">
+            <div class="img-preview">
+                <div id="imagePreview">
+                    {% if filename %}
+                        <div>
+                            <img src="{{ url_for('display_image', filename=filename) }}" style="max-height: 40vh">
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div>
+                <button type="button" class="predictor" id="btn-predict">
+            <a class="button-text" href=" {{ url_for('predictfile') }}">Predict!</a>
+          </button>
+            </div>
+        </div>
+
+        <div class="answer">
+            <div class="loader" style="display: none"></div>
+            <h3>
+                <span id="result">
+                    <p>
+                        {% with messages = get_flashed_messages() %}
+                          {% if messages %}
+                            {% for message in messages %}
+                              {{ message }}
+                            {% endfor %}
+                          {% endif %}
+                        {% endwith %}
+                    </p>
+                </span>
+            </h3>
+        </div>
+    </section>
+    <footer>
+        <h3>&copy; Team Lannisters</h3>
+    </footer>
+    
+</body>
+
+</html>

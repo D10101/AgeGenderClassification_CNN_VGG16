@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lannisters - Home</title>
+    <link href="{{ url_for('static', filename='css/styleIndex.css') }}" rel="stylesheet">
+
+    <link rel="icon" type="image/ico" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body style='background: url({{ url_for('static', filename='videos/WallHome.gif') }}); background-size: cover; background-attachment: fixed; background-repeat: no-repeat;'>
+    <nav>
+        <div class="logo">
+            <img src="../static/images/logo7a.png" alt="Logo">
+        </div>
+        <ul class="menu">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <section class="sec1">
+        <div class="right1">
+            <h1>Detect Your Age</h1>
+            <div class="info">
+                <p id="p1">"It's not How old you are...</p>
+                <p id="p2">Its How you are Old"</p>
+                <p id="p3">Jules Renard</p>
+            </div>
+            <div class="inputs">
+                <button id="webcam"><a class="buttontext" href="{{ url_for('openCam') }}" style="text-decoration: none;"><i class="fa-solid fa-camera-retro"></i> Cam</a></button>
+                <button id="file"><a class="buttontext" href="{{ url_for('result') }}"><i class="fa-solid fa-upload"></i> File</a></button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="sec2">
+        <h1>What the project is ?</h1>
+        <p>The research on age estimation based on face recognition has drawn more and more attention these days because of its wide range of applications. Image processing is the process of transforming an image into a digital format and perform certain
+            operations to get some useful statistics from it.  Age detection is the process of automatically discerning the age of a person solely from a photo of their face. Feature extraction from the image plays a vital role in age detection. In this
+            web application, we have used convolutional neural networks to detect the age of a person. In the aspect of face feature extraction, this software leverages excellent characteristics of convolution neural network in the field of image application,
+            by using deep learning methods to extract facial features. The model performs well in terms of accuracy. The software's wide range of applicatios include in visual surveillance, monitoring, banking, public and corporate security. We can use
+            our model in interactive platforms like Omegle where people interact based on their tastes. Using our model we can detect the current user’s age and makes sure he/she joins respective age groups.This project can also be used in implementing
+            attendance systems and particularly useful in finding lost children with the help of their age.</p>
+    </section>
+    <footer>
+        <h3>&copy; Team Lannisters</h3>
+    </footer>
+</body>
+
+</html>
